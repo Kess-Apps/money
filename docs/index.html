@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Money Calculator</title>
+		<style>
+			input[type=number]{
+				width:100%
+				border:2px solid #aaa;
+				border-radius:4px;
+				margin:8px 0;
+				outline:none;
+				padding:8px;
+				box-sizing:border-box;
+				transition:.3s;
+			}
+			input[type=number]:focus{
+				border-color:dodgerBlue;
+				box-shadow:0 0 8px 0 dodgerBlue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Doller -Euro Converter</h1>
+		<img src="https://tse1.mm.bing.net/th?id=OIP.lQFpjwh0Z2T2Djx7aoCzPgHaEK&pid=Api" width="300px" hight="300px">
+		</br>
+		
+		<input type= "number" id="usd" step="0.01" value="0" min="0" onchange="usdRechnen()" width="500" height="300">
+		<label for="usd">USD</label>
+		
+		</br>
+		
+		<input type= "number" id="eur" step="0.01" value="0" min="0" onchange="eurRechnen()"width="500" height="300">
+		<label for="eur">EUR</label>
+		
+		<script>
+			var usd, eur
+			usd = document.getElementById('usd')
+			eur = document.getElementById('eur')
+			
+			function usdRechnen(){
+				eur.value = usd.value * 0.8191
+			}
+			function eurRechnen(){
+				usd.value = eur.value * 1.2210
+			}
+		</script>
+	</body>
+</html>
